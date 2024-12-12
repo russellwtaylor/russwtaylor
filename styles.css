@@ -6,17 +6,19 @@
 }
 
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #3498db;
-    --text-color: #333;
-    --background-color: #f4f4f4;
+    --matrix-green: #008f11;
+    --matrix-text-color: #b9b9b9;
+    --matrix-black: #0d0208;
+    --matrix-dark-green: #003b00;
+    --matrix-light-green: #008f11;
+    --matrix-neon-green: #00ff41;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--matrix-text-color);
+    background-color: var(--matrix-black);
 }
 
 /* Navigation Styles */
@@ -25,7 +27,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: white;
+    background-color: var(--matrix-dark-green);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -33,10 +35,20 @@ nav {
     z-index: 1000;
 }
 
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--matrix-black);
+    z-index: -1;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--matrix-green);
 }
 
 .nav-links {
@@ -50,12 +62,12 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--matrix-text-color);
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--matrix-green);
 }
 
 .burger {
@@ -66,7 +78,7 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: var(--matrix-text-color);
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -88,12 +100,12 @@ section {
 h2 {
     text-align: center;
     margin-bottom: 50px;
-    color: var(--primary-color);
+    color: var(--matrix-green);
 }
 
 /* Home Section */
 .home {
-    background-color: white;
+    background-color: transparent;
     text-align: center;
 }
 
@@ -103,11 +115,11 @@ h2 {
 }
 
 .highlight {
-    color: var(--primary-color);
+    color: var(--matrix-green);
 }
 
 .typed-text {
-    color: var(--secondary-color);
+    color: var(--matrix-green);
 }
 
 .cursor {
@@ -133,20 +145,20 @@ h2 {
 }
 
 .social-links a {
-    color: var(--text-color);
+    color: var(--matrix-text-color);
     margin: 0 10px;
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    color: var(--matrix-green);
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--primary-color);
+    background-color: var(--matrix-green);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -181,7 +193,7 @@ h2 {
 .download-cv {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--matrix-green);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -239,12 +251,12 @@ h2 {
 }
 
 .github-link {
-    background-color: var(--text-color);
+    background-color: var(--matrix-text-color);
     color: white;
 }
 
 .demo-link {
-    background-color: var(--primary-color);
+    background-color: var(--matrix-green);
     color: white;
 }
 
@@ -270,7 +282,7 @@ h2 {
 
 .skill-card i {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--matrix-green);
     margin-bottom: 15px;
 }
 
@@ -301,7 +313,7 @@ h2 {
 
 .submit-btn {
     padding: 10px 20px;
-    background-color: var(--primary-color);
+    background-color: var(--matrix-green);
     color: white;
     border: none;
     border-radius: 5px;
@@ -315,7 +327,7 @@ h2 {
 
 /* Footer */
 footer {
-    background-color: var(--text-color);
+    background-color: var(--matrix-text-color);
     color: white;
     text-align: center;
     padding: 20px;
