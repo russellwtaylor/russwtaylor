@@ -1,11 +1,13 @@
+let isMatrix = false;
+
 function enterMatrix() {
-    console.log('Entering the Matrix...');
+    console.log('Entering the Matrix...')
+    toggleMatrix();
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log(canvas.width, canvas.height);
 
     let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
     gradient.addColorStop(0, '#008F11');
@@ -79,15 +81,32 @@ function enterMatrix() {
         }
         requestAnimationFrame(animate);
     }
-    animate(0);
+    if (isMatrix) { animate(0); }
 
     window.addEventListener('resize', function () {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         effect.resize(canvas.width, canvas.height);
     });
+}
 
-
+function toggleMatrix() {
+    
+    if(isMatrix) {
+        console.log('Exiting the Matrix...');
+        document.getElementById('canvas').classList.remove('canvas-matrix');
+        document.getElementById('home-text').classList.remove('body-matrix');
+        document.getElementById('contact').classList.remove('contact-matrix');
+        document.getElementById('logo').classList.remove('logo-matrix');
+        document.getElementById('navbar').classList.remove('navbar-matrix');
+        isMatrix = false;
+    } else {
+        document.getElementById('home-text').classList.add('body-matrix');
+        document.getElementById('contact').classList.add('contact-matrix');
+        document.getElementById('logo').classList.add('logo-matrix');
+        document.getElementById('navbar').classList.add('navbar-matrix');
+        isMatrix = true;
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -152,11 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            if(targetId !== '#') {
+                const targetSection = document.querySelector(targetId);
 
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 

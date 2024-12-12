@@ -21,18 +21,26 @@ body {
     background-color: var(--matrix-black);
 }
 
+.body-matrix {
+    color: var(--matrix-text-color);
+}
+
 /* Navigation Styles */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--matrix-dark-green);
+    background-color: gray;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+}
+
+.navbar-matrix {
+    background-color: var(--matrix-dark-green);
 }
 
 #canvas {
@@ -41,13 +49,25 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--matrix-black);
+    background-color: white;
     z-index: -1;
+}
+
+.canvas-matrix {
+    background-color: var(--matrix-black);
+}
+
+.canvas-disabled {
+    display: none;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--matrix-text-color);
+}
+
+.logo-matrix {
     color: var(--matrix-green);
 }
 
@@ -112,6 +132,7 @@ h2 {
 .home-content h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    background-color: transparent;
 }
 
 .highlight {
@@ -289,6 +310,10 @@ h2 {
 /* Contact Section */
 .contact {
     background-color: white;
+}
+
+.contact-matrix {
+    background-color: transparent;
 }
 
 #contact-form {
