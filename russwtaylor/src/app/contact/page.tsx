@@ -141,15 +141,15 @@ export default function Contact() {
 					<ul className="space-y-2">
 						<li>
 							<a
-								href="https://twitter.com/yourprofile"
+								href="https://www.salesforce.com/trailblazer/russelltaylor"
 								className="text-blue-400 hover:underline"
 							>
-								Twitter
+								Salesforce Trailhead
 							</a>
 						</li>
 						<li>
 							<a
-								href="https://linkedin.com/in/yourprofile"
+								href="https://www.linkedin.com/in/russelltaylor812/"
 								className="text-blue-400 hover:underline"
 							>
 								LinkedIn
@@ -157,7 +157,7 @@ export default function Contact() {
 						</li>
 						<li>
 							<a
-								href="https://github.com/yourprofile"
+								href="https://github.com/russellwtaylor"
 								className="text-blue-400 hover:underline"
 							>
 								GitHub

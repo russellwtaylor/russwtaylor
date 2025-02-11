@@ -10,7 +10,8 @@ export default function Home() {
 
 			<div className="max-w-4xl text-center">
 				<p className="mb-4">
-					I am a software developer specializing in web applications.
+					I am a software developer specializing in web applications
+					and CRM integrations.
 				</p>
 				<p className="mb-4">
 					Feel free to explore my projects and get in touch!

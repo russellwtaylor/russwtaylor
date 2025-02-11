@@ -75,6 +75,29 @@ export default function About() {
 					</div>
 				</div>
 
+				<div className="mb-12 bg-black/75 p-6 rounded-lg">
+					<h2 className="text-2xl font-semibold mb-6">
+						Certifications
+					</h2>
+					<div className="space-y-6">
+						{certifications.map((exp, index) => (
+							<div
+								key={index}
+								className="border-l-2 border-neutral-700 pl-4"
+							>
+								<h3 className="text-xl font-semibold">
+									{exp.role}
+								</h3>
+								<p className="text-gray-400">{exp.company}</p>
+								<p className="text-sm text-gray-500">
+									{exp.period}
+								</p>
+								<p className="mt-2">{exp.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+
 				<div className="bg-black/75 p-6 rounded-lg">
 					<h2 className="text-2xl font-semibold mb-4">Connect</h2>
 					<p className="mb-4">
@@ -95,36 +118,53 @@ export default function About() {
 }
 
 const skills = [
-	"React",
+	"Apex",
+	"Javascript",
 	"TypeScript",
-	"Node.js",
+	"React",
 	"Next.js",
-	"Python",
 	"AWS",
-	"Docker",
-	"GraphQL",
+	"Salesforce Development",
+	"CRM System Design",
 ];
 
 const experience = [
 	{
 		role: "Senior Software Engineer",
-		company: "Tech Solutions Inc.",
-		period: "2020 - Present",
+		company: "Procore Technologies (PCOR)",
+		period: "2017 - Present",
 		description:
-			"Leading development of enterprise-scale web applications, mentoring junior developers, and implementing best practices.",
+			"Lead engineer in development of Procore's Salesforce CRM and integrations with their core product and business systems.",
 	},
 	{
 		role: "Full Stack Developer",
-		company: "Digital Innovations Co.",
-		period: "2018 - 2020",
+		company: "KilterCloud",
+		period: "2021 - Present",
 		description:
-			"Developed and maintained multiple client projects using React, Node.js, and AWS infrastructure.",
+			"Design and develop custom applications for distribution on Salesforce's AppExchange.",
+	},
+];
+
+const certifications = [
+	{
+		role: "Salesforce Certified Administrator",
+		company: "Salesforce",
+		period: "2019",
+		description:
+			"Certified in Salesforce administration and best practices.",
 	},
 	{
-		role: "Web Developer",
-		company: "StartUp Labs",
-		period: "2016 - 2018",
+		role: "Salesforce Certified Platform Developer I",
+		company: "Salesforce",
+		period: "2019",
 		description:
-			"Built responsive web applications and contributed to the company's core product development.",
+			"Demonstrated experience developing and deploying business logic and user interfaces using the programmatic capabilities of the Lightning Platform.",
+	},
+	{
+		role: "Salesforce Certified Platform Developer II",
+		company: "Salesforce",
+		period: "2020",
+		description:
+			"Demonstrated advanced knowledge of the programmatic capabilities of the Salesforce platform and data modeling to develop complex business logic and interfaces.",
 	},
 ];
