@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Projects() {
 	const projects = [
 		{
@@ -7,24 +9,28 @@ export default function Projects() {
 			description:
 				"A brief description of Project One. This project involves building a web application using React and Node.js.",
 			link: "https://github.com/yourprofile/project-one",
+			image: "/images/project-one.png",
 		},
 		{
 			title: "Project Two",
 			description:
 				"A brief description of Project Two. This project focuses on creating a mobile application using React Native.",
 			link: "https://github.com/yourprofile/project-two",
+			image: "/images/project-two.png",
 		},
 		{
 			title: "Project Three",
 			description:
 				"A brief description of Project Three. This project is about developing a RESTful API with Express and MongoDB.",
 			link: "https://github.com/yourprofile/project-three",
+			image: "/images/project-three.png",
 		},
 		{
 			title: "Project Four",
 			description:
 				"A brief description of Project Four. This project showcases a data visualization dashboard built with D3.js.",
 			link: "https://github.com/yourprofile/project-four",
+			image: "/images/project-four.png",
 		},
 	];
 
@@ -41,6 +47,13 @@ export default function Projects() {
 							key={index}
 							className="bg-black/75 p-6 rounded-lg shadow-lg"
 						>
+							<Image
+								src={project.image}
+								alt={project.title}
+								className="w-full h-auto rounded-lg mb-4"
+								width={500}
+								height={300}
+							/>
 							<h2 className="text-2xl font-semibold mb-2">
 								{project.title}
 							</h2>

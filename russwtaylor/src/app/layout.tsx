@@ -28,14 +28,16 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
 			>
-				<div
-					className="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
-					style={{
-						backgroundImage: "url('/images/background-min.jpg')",
-					}}
-				>
+				<div className="relative min-h-screen flex flex-col bg-cover bg-center bg-no-repeat">
+					<div
+						className="absolute inset-0 bg-black opacity-30"
+						style={{
+							backgroundImage:
+								"url('/images/background-min.jpg')",
+						}}
+					></div>
 					<Navbar />
-					<main className="flex-grow">{children}</main>
+					<main className="flex-grow relative z-10">{children}</main>
 				</div>
 			</body>
 		</html>
