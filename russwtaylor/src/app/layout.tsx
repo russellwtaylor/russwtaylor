@@ -29,6 +29,7 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
 			>
+				<Analytics />
 				<div className="relative min-h-screen flex flex-col bg-cover bg-center bg-no-repeat">
 					<div
 						className="absolute inset-0 bg-black opacity-30"
@@ -38,10 +39,7 @@ export default function RootLayout({
 						}}
 					></div>
 					<Navbar />
-					<main className="flex-grow relative z-10">
-						{children}
-						<Analytics />
-					</main>
+					<main className="flex-grow relative z-10">{children}</main>
 				</div>
 			</body>
 		</html>

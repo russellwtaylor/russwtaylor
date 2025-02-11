@@ -69,8 +69,8 @@ Here are some of the projects featured in my portfolio:
 
 Feel free to reach out to me for any inquiries or collaboration opportunities:
 
--   **Email**: your.email@example.com
--   **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
--   **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+-   **Email**: russ@kiltercloud.com
+-   **LinkedIn**: [Russell Taylor](https://www.linkedin.com/in/russelltaylor812/)
+-   **GitHub**: [russellwtaylor](https://github.com/russellwtaylor)
 
 Thank you for visiting my portfolio!
