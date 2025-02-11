@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
 	return (
 		<div className="container mx-auto px-4 py-8">
@@ -27,10 +29,13 @@ export default function About() {
 					</div>
 					<div className="md:col-span-1">
 						<div className="rounded-lg overflow-hidden shadow-lg bg-black/75 p-2">
-							<img
+							<Image
 								src="/images/profile-pic.png"
 								alt="Russell Taylor Profile Picture"
+								width={500}
+								height={500}
 								className="w-full h-auto rounded-lg"
+								priority
 							/>
 						</div>
 					</div>
