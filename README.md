@@ -18,7 +18,7 @@ I am a passionate software developer specializing in building web applications a
 ## Technologies Used
 
 -   **Frontend**: React, Next.js, Tailwind CSS
--   **Backend**: Node.js
+-   **Backend**: Node.js, SendGrid API
 -   **Database**: MongoDB
 -   **Deployment**: Vercel
 

@@ -8,34 +8,59 @@ export default function Contact() {
 	const [message, setMessage] = useState("");
 	const [emailError, setEmailError] = useState("");
 	const [toastMessage, setToastMessage] = useState("");
+	const [toastStatus, setToastStatus] = useState<"success" | "error" | null>(
+		null
+	);
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault(); // Prevent the default form submission behavior
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
 
-		// Email validation regex
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 		if (!emailRegex.test(email)) {
 			setEmailError("Please enter a valid email address.");
-			return; // Stop the submission if the email is invalid
+			setToastMessage("Please enter a valid email address.");
+			setToastStatus("error");
+			return;
 		} else {
-			setEmailError(""); // Clear the error if the email is valid
+			setEmailError("");
 		}
 
-		// Log the form data to the console (you can replace this with your API call)
-		console.log("Name:", name);
-		console.log("Email:", email);
-		console.log("Message:", message);
+		try {
+			const response = await fetch("/api/send-email", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ name, email, message }),
+			});
 
-		// Clear the form fields after submission
-		setName("");
-		setEmail("");
-		setMessage("");
+			const data = await response.json();
 
-		// Show success toast
-		setToastMessage("Your message has been sent successfully!");
+			if (!response.ok) {
+				throw new Error(data.error || "Failed to send message");
+			}
+
+			// Clear the form fields after successful submission
+			setName("");
+			setEmail("");
+			setMessage("");
+
+			// Show success toast
+			setToastMessage("Your message has been sent successfully!");
+			setToastStatus("success");
+		} catch (error) {
+			setToastMessage(
+				error instanceof Error
+					? error.message
+					: "Failed to send message. Please try again later."
+			);
+			setToastStatus("error");
+		}
+
 		setTimeout(() => {
-			setToastMessage(""); // Clear the toast message after 3 seconds
+			setToastMessage("");
+			setToastStatus(null);
 		}, 3000);
 	};
 
@@ -47,7 +72,13 @@ export default function Contact() {
 				</h1>
 
 				{toastMessage && (
-					<div className="bg-green-500 text-white p-4 rounded-lg mb-4">
+					<div
+						className={`${
+							toastStatus === "success"
+								? "bg-green-500"
+								: "bg-red-500"
+						} text-white p-4 rounded-lg mb-4 transition-all duration-300`}
+					>
 						{toastMessage}
 					</div>
 				)}
