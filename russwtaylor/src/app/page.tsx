@@ -4,7 +4,7 @@ export default function Home() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 			<h1 className="text-4xl font-bold text-center">
-				Russell Taylor Portfolio Site
+				Russell Taylor&apos;s Portfolio Site
 			</h1>
 			<p className="text-lg text-center">Welcome to my portfolio!</p>
 
